@@ -49,12 +49,9 @@ public class Main {
                 System.out.println(tempFloor > floor ? "down" : " up");
             }
         }
+//        while (isPoliceAlive) {  }
 
 
-        while (isPoliceAlive) {
-
-
-        }
     }
 
 

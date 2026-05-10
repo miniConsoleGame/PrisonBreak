@@ -2,7 +2,7 @@ package character;
 
 public class Character {
 
-    int HP = 300;
+    int HP;
 
     public void getDamage(){}
     public void getDefense(){}

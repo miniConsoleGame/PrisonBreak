@@ -2,9 +2,8 @@ package character;
 
 public class Police extends Character {
 
-    int HP = 300;
-
     public Police() {
+        super(300);
     }
 
     public Police(int HP) {

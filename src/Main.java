@@ -49,9 +49,24 @@ public class Main {
                 System.out.println(tempFloor > floor ? "down" : " up");
             }
         }
-//        while (isPoliceAlive) {  }
+        while (isPoliceAlive) {
+            if(sc.next()=="exit") {break;}
+
+        }
 
 
+    }
+
+    private void EndGame() {
+
+        if(isPoliceAlive) {
+            ConsoleText.printPoliceWithBaton();
+            System.out.println("잡았다 이놈!");
+        }
+        else {
+            ConsoleText.printThiefRunaway();
+            System.out.println("아이쿠 ! 놓쳐버렸네 ! ");
+        }
     }
 
 

@@ -6,6 +6,7 @@ import weapon.Shield;
 import weapon.Sword;
 import weapon.Weapon;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BattleManager {
@@ -82,21 +83,25 @@ public class BattleManager {
         boolean isSeleted = false;
         int seletedWeapon = 0;
 
-        while(!isSeleted)
-            {
-            System.out.println("● 보유한 무기");
-            for(int i=0; i<weapon.length; i++){
-                System.out.println("+무기 "+(i+1)+"번. "+weapon[i].toString());
-            }
-            System.out.print("☞ 사용할 무기의 번호를 입력 해주세요. : ");
-            seletedWeapon = sc.nextInt();
+        while(!isSeleted){
+            try{
+                    System.out.println("● 보유한 무기");
+                    for (int i = 0; i < weapon.length; i++) {
+                        System.out.println("+무기 " + (i + 1) + "번. " + weapon[i].toString());
+                    }
+                    System.out.print("☞ 사용할 무기의 번호를 입력 해주세요. : ");
+                    seletedWeapon = sc.nextInt();
 
-            if((seletedWeapon) > weapon.length){
-                System.out.println("보유한 무기가 아닙니다. 다시 골라주세요!");
-                isSeleted = false;
-            }
-            else{
-                isSeleted = true;
+                    if ((seletedWeapon) > weapon.length) {
+                        System.out.println("보유한 무기가 아닙니다. 다시 골라주세요!");
+                        isSeleted = false;
+                    } else {
+                        isSeleted = true;
+                    }
+                }
+            catch(InputMismatchException e){
+                System.out.println("잘못된 입력입니다. 숫자(번호)만 입력해주세요!");
+                sc.nextLine();
             }
         }
 

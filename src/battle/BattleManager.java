@@ -6,13 +6,16 @@ import weapon.Shield;
 import weapon.Sword;
 import weapon.Weapon;
 
+import java.security.PublicKey;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import game.ConsoleText;
 
 public class BattleManager {
     Scanner sc = new Scanner(System.in);
     Police police = new Police();
     Thief thief = new Thief();
+    static boolean isPoliceAlive;
 
     Weapon[] weapon = new Weapon[3];
     {
@@ -30,6 +33,7 @@ public class BattleManager {
     public void startBattle(Police police, Thief thief){
         this.police = police;
         this.thief = thief;
+        isPoliceAlive= true;
         int countHPPotion = 3;
 
         while(true){
@@ -68,11 +72,12 @@ public class BattleManager {
     public boolean isDead(){
 
         if(police.getHP()<=0){
-            System.out.print("! 경찰 HP 0 이하. 아쉽게도 도둑이 탈출하였습니다.(ㅜ.ㅜ) 게임이 종료 됩니다...");
+            ConsoleText.printThiefRunaway();
+            isPoliceAlive = false;
             return true;
         }
         if (thief.getHP()<=0){
-            System.out.print("! 도둑 HP 0 이하. 도둑은 체포하고 감옥에 보냈습니다.(^0^) 게임이 종료 됩니다...");
+            ConsoleText.printPolice();
             return true;
         }
         return false;
@@ -158,6 +163,10 @@ public class BattleManager {
             }
         }
         return option;
+    }
+
+    public static Boolean IsPoliceAlive(){
+        return isPoliceAlive;
     }
 
 

@@ -1,3 +1,5 @@
+package game;
+
 import battle.BattleManager;
 import character.Police;
 import character.Thief;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    boolean isPoliceAlive;
+
     int floor;
 
 
@@ -31,7 +33,7 @@ public class Main {
         Random random = new Random();
         floor = random.nextInt(1, 101);
         System.out.println(floor);
-        isPoliceAlive = true;
+
     }
 
     private void UpdateGame() throws Exception {
@@ -59,17 +61,13 @@ public class Main {
                 System.out.println(tempFloor > floor ? "down" : " up");
             }
         }
-        while (isPoliceAlive) {
-            if(sc.next()=="exit") {break;}
-
-        }
-
+        EndGame();
 
     }
 
     private void EndGame() {
 
-        if(isPoliceAlive) {
+        if(BattleManager.IsPoliceAlive()) {
             ConsoleText.printPoliceWithBaton();
             System.out.println("잡았다 이놈!");
         }

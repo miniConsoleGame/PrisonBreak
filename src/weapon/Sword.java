@@ -3,7 +3,7 @@ package weapon;
 public class Sword extends Weapon {
 
     public Sword() {
-        super("\uD83D\uDDE1\uFE0F칼",70,10);
+        super("\uD83D\uDDE1\uFE0F특수 대검",70,10);
     }
 
     public int getDamage() {

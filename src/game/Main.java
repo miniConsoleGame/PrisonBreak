@@ -46,7 +46,7 @@ public class Main {
 
             System.out.print("도둑이 숨은 층을 조사하여 체포 하십시오. ( 1 ~ 100층 )");
             tempFloor = sc.nextInt();
-            if(tempFloor > 100)
+            if(tempFloor > 100 || tempFloor < 1)
             {
                 System.out.println("1~100 사이의 숫자만 입력해주세요.");
                 continue;

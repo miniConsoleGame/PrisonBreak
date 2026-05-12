@@ -38,11 +38,11 @@ public class BattleManager {
 
         while(true){
 
+            attack(selectWeapon()-1, rolledDice());
+
             if(isDead()){
                 break;
             };
-
-            attack(selectWeapon()-1, rolledDice());
 
             if(police.getHP() <= 100){
                     String isPortionUsed = getPortion();
@@ -60,7 +60,12 @@ public class BattleManager {
 
                     }else if(isPortionUsed.equals("A")){
                         System.out.println("\"계속 공격\" 선택");
+
                         attack(selectWeapon()-1, rolledDice());
+
+                        if(isDead()){
+                            break;
+                        };
 
                     }
 

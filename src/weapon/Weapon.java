@@ -41,8 +41,8 @@ public class Weapon {
 
     @Override
     public String toString() {
-        return  "무기명='" + name + '\'' +
-                ", 공격력=" + damage +
-                ", 방어력=" + defense;
+        return  "\'" + name + '\'' +
+                " (ATK " + damage +
+                " / DEF " + defense+")";
     }
 }

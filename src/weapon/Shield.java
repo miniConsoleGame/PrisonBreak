@@ -3,7 +3,7 @@ package weapon;
 public class Shield extends Weapon {
 
     public Shield() {
-        super("\uD83D\uDEE1\uFE0F방패",30,70);
+        super("\uD83D\uDEE1\uFE0F진압 방패",30,70);
     }
 
     public int getDamage() {

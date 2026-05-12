@@ -1,9 +1,9 @@
 package weapon;
 
-public class Gun extends Weapon {
+public class Taser extends Weapon {
 
-    public Gun() {
-        super("\uD83D\uDD2B전술 권총",40,50);
+    public Taser() {
+        super("⚡ 테이저건",55,25);
     }
 
     public int getDamage() {

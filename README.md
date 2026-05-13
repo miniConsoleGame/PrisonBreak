@@ -121,4 +121,17 @@ public void startBattle(Police police, Thief thief){
 - getPortion() : HP가 100이하일때 계속 물약 사용 or 계속 공격 선택
 
 ## 실행 방법
-- 
+```
+1. Repository 클론:
+Bash
+git clone https://github.com/miniConsoleGame/PrisonBreak.git
+
+2. 프로젝트 폴더로 이동:
+Bash
+cd 프로젝트이름
+
+3. 컴파일 및 실행:
+Bash
+Main.java 파일의 Main 메서드를 실행하세요.
+```
+

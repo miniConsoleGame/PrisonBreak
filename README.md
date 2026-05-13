@@ -54,14 +54,14 @@ public void startBattle(Police police, Thief thief){
 
         while(true){
             // 1. 공격 수행 (무기 선택 -> 주사위 -> 대미지 계산)
-            **attack(selectWeapon()-1, rolledDice());**
+            attack(selectWeapon()-1, rolledDice());
             // 2. 누군가 죽었는지 즉시 확인
-            if(**isDead()**){
+            if(isDead()){
                 break;
             };
             // 3. 공격 후 경찰 체력이 100 이하이고 물약이 남아있다면 물어보기
             if(police.getHP() <= 100){
-                    String choice = **getPortion()**;
+                    String choice = getPortion();
 
                     if(choice.equals("P")){
                         System.out.println("\"물약 사용\" 선택");

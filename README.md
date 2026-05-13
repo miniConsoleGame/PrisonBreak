@@ -122,16 +122,13 @@ public void startBattle(Police police, Thief thief){
 
 ## 실행 방법
 ```
-1. Repository 클론:
-Bash
+1. 저장소 클론:
 git clone https://github.com/miniConsoleGame/PrisonBreak.git
 
-2. 프로젝트 폴더로 이동:
-Bash
-cd 프로젝트이름
+2. 디렉토리 이동:
+cd miniConsoleGame
 
-3. 컴파일 및 실행:
-Bash
+3. 프로젝트 빌드 및 실행:
 Main.java 파일의 Main 메서드를 실행하세요.
 ```
 

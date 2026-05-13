@@ -26,10 +26,10 @@
 - 🛡️방패 : 데미지 30 / 방어력 70
 - 🗡️칼 : 데미지 70 / 방어력 10
 - ⚡ 테이저건 : 데미지 55 / 방어력 25
-4. 전투 판정: 무기 선택 후 확률(랜덤 숫자 0 또는 1)에 따라 공격 성패가 결정됩니다.
-   - 숫자 1: 데미지 만큼 도둑의 HP 감소
-   - 숫자 0: 도둑의 공격력(100 - 각 무기의 방어력) 만큼 경찰의 HP 감소
-5.  회복 물약 시스템
+3. 전투 판정: 무기 선택 후 확률(랜덤 숫자 0 또는 1)에 따라 공격 성패가 결정됩니다.
+   - 숫자 1: (경찰 공격) 데미지 만큼 도둑의 HP 감소
+   - 숫자 0: (도둑 공격) 도둑의 공격력(100 - 각 무기의 방어력) 만큼 경찰의 HP 감소
+4.  회복 물약 시스템
 - 경찰의 HP가 100 이하로 떨어지면 물약 사용 여부를 묻는 창이 뜹니다.
 - 물약 사용 시 HP 50이 즉시 회복됩니다.
 - 게임 중 사용할 수 있는 물약의 총 횟수는 3회입니다.
@@ -37,25 +37,6 @@
 #### 최종 결과
 - 도둑 HP 0: 검거 성공! 도둑 감옥행
 - 경찰 HP 0: 검거 실패... 도둑 탈출
-
-### 프로젝트 구조
-```
-┣ 📂 battle
- ┃ ┗ 📜 BattleManager.java   # 전투 로직 및 턴 관리
- ┣ 📂 character
- ┃ ┣ 📜 Character.java       # 캐릭터 공통 속성(부모 클래스)
- ┃ ┣ 📜 Police.java          # 경찰 캐릭터 클래스
- ┃ ┗ 📜 Thief.java           # 도둑 캐릭터 클래스
- ┣ 📂 game
- ┃ ┣ 📜 ConsoleText.java     # 게임 내 텍스트 출력 및 UI
- ┃ ┗ 📜 Main.java             # 게임 실행 메인 엔트리
- ┗ 📂 weapon
- ┃ ┣ 📜 Weapon.java          # 무기 공통 속성(부모 클래스)
- ┃ ┣ 📜 Gun.java             # 총 클래스
- ┃ ┣ 📜 Shield.java          # 방패 클래스
- ┃ ┣ 📜 Sword.java           # 칼 클래스
- ┃ ┗ 📜 Taser.java           # 테이저건 클래스
-```
 
 ## 👮 팀원A - 신예은
 ### 주요 기능
@@ -138,6 +119,25 @@ public void startBattle(Police police, Thief thief){
 - rolledDice() : 주사위 선택
 - attack() : 공격 수행 (무기 선택 -> 주사위 -> 대미지 계산)
 - getPortion() : HP가 100이하일때 계속 물약 사용 or 계속 공격 선택
+
+### 프로젝트 구조
+```
+┣ 📂 battle
+ ┃ ┗ 📜 BattleManager.java   # 전투 로직 및 턴 관리
+ ┣ 📂 character
+ ┃ ┣ 📜 Character.java       # 캐릭터 공통 속성(부모 클래스)
+ ┃ ┣ 📜 Police.java          # 경찰 캐릭터 클래스
+ ┃ ┗ 📜 Thief.java           # 도둑 캐릭터 클래스
+ ┣ 📂 game
+ ┃ ┣ 📜 ConsoleText.java     # 게임 내 텍스트 출력 및 UI
+ ┃ ┗ 📜 Main.java             # 게임 실행 메인 엔트리
+ ┗ 📂 weapon
+ ┃ ┣ 📜 Weapon.java          # 무기 공통 속성(부모 클래스)
+ ┃ ┣ 📜 Gun.java             # 총 클래스
+ ┃ ┣ 📜 Shield.java          # 방패 클래스
+ ┃ ┣ 📜 Sword.java           # 칼 클래스
+ ┃ ┗ 📜 Taser.java           # 테이저건 클래스
+```
 
 ## 실행 방법
 ```

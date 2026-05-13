@@ -38,6 +38,25 @@
 - 도둑 HP 0: 검거 성공! 도둑 감옥행
 - 경찰 HP 0: 검거 실패... 도둑 탈출
 
+### 프로젝트 구조
+```
+┣ 📂 battle
+ ┃ ┗ 📜 BattleManager.java   # 전투 로직 및 턴 관리
+ ┣ 📂 character
+ ┃ ┣ 📜 Character.java       # 캐릭터 공통 속성(부모 클래스)
+ ┃ ┣ 📜 Police.java          # 경찰 캐릭터 클래스
+ ┃ ┗ 📜 Thief.java           # 도둑 캐릭터 클래스
+ ┣ 📂 game
+ ┃ ┣ 📜 ConsoleText.java     # 게임 내 텍스트 출력 및 UI
+ ┃ ┗ 📜 Main.java             # 게임 실행 메인 엔트리
+ ┗ 📂 weapon
+ ┃ ┣ 📜 Weapon.java          # 무기 공통 속성(부모 클래스)
+ ┃ ┣ 📜 Gun.java             # 총 클래스
+ ┃ ┣ 📜 Shield.java          # 방패 클래스
+ ┃ ┣ 📜 Sword.java           # 칼 클래스
+ ┃ ┗ 📜 Taser.java           # 테이저건 클래스
+```
+
 ## 👮 팀원A - 신예은
 ### 주요 기능
 - 게임 시작, 초기화, 종료처리 로직 구현
